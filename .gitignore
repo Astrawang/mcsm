@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+**/.dockerignore
+
+*.log
+
+**/data/*
+!**/data/
+!**/data/start_mcsm_server.sh
