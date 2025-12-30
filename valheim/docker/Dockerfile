@@ -13,7 +13,10 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # 3. 创建steam用户
-RUN id -u steam &>/dev/null || useradd -m steam
+RUN (getent passwd 1000 > /dev/null && userdel -f $(getent passwd 1000 | cut -d: -f1)) || true && \
+    (getent group 1000 > /dev/null && groupdel $(getent group 1000 | cut -d: -f1)) || true && \
+    groupadd -g 1000 steam && \
+    useradd -m -u 1000 -g steam steam
 
 # 4. 创建工作目录
 RUN mkdir -p /app/game && chown -R steam:steam /app/game
