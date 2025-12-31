@@ -20,7 +20,10 @@ if [ -z "$1" ]; then
     chmod +x ./start_mcsm_server.sh
     exec ./start_mcsm_server.sh
   else
-    echo "错误: 未找到 start_mcsm_server.sh 文件！请在数据目录中创建。"
+    echo "--------------------------------------------------------"
+    echo "❌ 错误: 未找到 start_mcsm_server.sh 文件！"
+    echo "请在数据目录中创建。"
+    echo "--------------------------------------------------------"
     exit 1
   fi
 else

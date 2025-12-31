@@ -31,8 +31,6 @@ mkdir -p /opt/mcsm/valheim/data
 # 将启动脚本复制进去，并赋予执行权限
 cp ./data/start_mcsm_server.sh /opt/mcsm/valheim/data/
 sudo chown -R 1000:1000 /opt/mcsm/valheim/data
-chmod +x /opt/mcsm/valheim/data/start_mcsm_server.sh
-
 ```
 
 **⚠️ 重要配置：**
